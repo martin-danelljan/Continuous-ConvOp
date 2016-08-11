@@ -6,7 +6,7 @@ This MATLAB code implements Continuous Convolution Operator Tracker (C-COT).
 
 
 #######################################################################
-Publication
+## Publication
 #######################################################################
 
 Details about the tracker can be found in the ECCV 2016 paper:
@@ -19,7 +19,7 @@ In Proceedings of the European Conference on Computer Vision (ECCV), 2016.
 Please cite the above publication if you use the code or compare with our C-COT tracker in your work. Bibtex entry:
 
 @InProceedings{DanelljanECCV2016,
-  Title = {Beyond Correlation Filters: Learning Continuous Convolution Operators for Visual Tracking},
+  Title = {Beyond Correlation Filters: Learning Continuous Convolution Operators for Visual Tracking}, 
   Author = {Danelljan, Martin and Robinson, Andreas and Shahbaz Khan, Fahad and Felsberg, Michael},
   Booktitle = {ECCV},
   Year = {2016},
@@ -27,14 +27,14 @@ Please cite the above publication if you use the code or compare with our C-COT 
 
 
 #######################################################################
-Project Webpage
+## Project Webpage
 #######################################################################
 
 http://www.cvl.isy.liu.se/research/objrec/visualtracking/conttrack/index.html
 
 
 #######################################################################
-Contact
+## Contact
 #######################################################################
 
 Martin Danelljan
@@ -44,7 +44,7 @@ Webpage: http://users.isy.liu.se/cvl/marda26/
 
 
 #######################################################################
-Installation
+## Installation
 #######################################################################
 
 1. Clone the GIT repository:
@@ -72,12 +72,12 @@ This package requires matconvnet [1], if you want to use deep CNN features, and 
 
 
 #######################################################################
-Description and Instructions
+## Description and Instructions
 #######################################################################
 
-------------------------------------
-Runfiles
-------------------------------------
+####################################
+### Runfiles
+####################################
 
 The files in the runfiles/ directory are uset to set parameters and run the tracker. You can create your own runfiles by copying an existing one and then play around with different parameters and feature combinations. 
 
@@ -90,9 +90,9 @@ VOT2016_settings.m  -  Contains the parameter settings that were used in the Vis
 testing.m  -  Has the same settings as in ECCV2016_settings.m by default, but can be used for playing around with parameters and features.
 
 
-------------------------------------
-Features
-------------------------------------
+####################################
+### Features
+####################################
 
 This package includes a quite general framework for feature extraction. You can easily incorporate your own features in the same manner by adding a corresponding "get_featureX.m" function.
 
@@ -113,16 +113,16 @@ Each feature has its own parameter settings. You can set the cell size for each 
 See the runfile testing.m for examples of how to integrate different features. You can uncomment several features at once in the params.t_features cell array.
 
 
-------------------------------------
-Integration Into OTB
-------------------------------------
+####################################
+### Integration Into OTB
+####################################
 
 It should be easy to integrate the tracker into the Online Tracking Benchmark [5]. The runfiles supports the OTB interface, so you just have to copy and rename the runfile you want to use and then add the necessary paths (see setup_paths.m).
 
 
-------------------------------------
-A Note on Results
-------------------------------------
+####################################
+### A Note on Results
+####################################
 
 This code contains some minor updates and fixes compared to the code used for producing the results in our ECCV 2016 paper. Thish should however only have a marginal effect on performance on benchmarks (less than 0.5% on OTB 2015). Tracking performance can also vary slightly on different machines and Matlab versions.
 
@@ -133,14 +133,14 @@ If you, for some reason, want to run the exact same version of the code as used 
 
 
 #######################################################################
-Acknowledgments
+## Acknowledgments
 #######################################################################
 
 Gustav Häger has contributed with some of the implementation, mainly regarding feature extraction.
 
 
 #######################################################################
-References
+## References
 #######################################################################
 
 [1] Webpage: http://www.vlfeat.org/matconvnet/
