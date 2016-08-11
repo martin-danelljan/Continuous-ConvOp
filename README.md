@@ -47,6 +47,10 @@ Webpage: http://users.isy.liu.se/cvl/marda26/
 ## Installation
 #######################################################################
 
+####################################
+### Using git clone
+####################################
+
 1. Clone the GIT repository:
 
    $ git clone https://github.com/martin-danelljan/Continuous-ConvOp.git
@@ -69,6 +73,21 @@ Webpage: http://users.isy.liu.se/cvl/marda26/
 
 Note:  
 This package requires matconvnet [1], if you want to use deep CNN features, and PDollar Toolbox [2], if you want to use HOG features. Both these externals are included as git submodules and should be installed by following step 2. above.
+
+
+####################################
+### Without using git
+####################################
+
+You could also downlad and install without using git. This is however not recommented since it will be harder to incorporate updates and you will not get the correct versions of matconvnet and PDollar Toolbox.
+
+1. Download ZIP file from https://github.com/martin-danelljan/Continuous-ConvOp and unpack it somewhere.
+
+2. Download matconvnet ZIP file from https://github.com/vlfeat/matconvnet and unpack it in the external_libs/matconvnet/ folder of the repository.
+   
+   Download PDollar Toolbox ZIP file from https://github.com/pdollar/toolbox and unpack it in the external_libs/pdollar_toolbox/ folder of the repository.
+
+Lastly, perform steps 3. and 4. above.
 
 
 #######################################################################
