@@ -40,5 +40,5 @@ if exist('external_libs/matconvnet/matlab', 'dir') == 7
     end
     cd(home_dir)
 else
-    warning('CCOT:install', 'Matconvnet not found. Download this submodule if you want to use CNN features. Skipping for now.')
+    warning('CCOT:install', 'Matconvnet not found. Clone this submodule if you want to use CNN features. Skipping for now.')
 end

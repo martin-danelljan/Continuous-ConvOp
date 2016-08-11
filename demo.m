@@ -1,5 +1,5 @@
 
-% This demo script runs the C-COT on the included "Couple" video.
+% This demo script runs the C-COT on the included "Crossing" video.
 
 % Add paths
 setup_paths();
