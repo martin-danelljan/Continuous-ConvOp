@@ -24,7 +24,7 @@ params.t_features = {
     struct('getFeature',@get_table_feature, 'fparams',cn_params),...
 };
 
-% Global feature parameters1s
+% Global feature parameters
 params.t_global.normalize_power = 2;    % Lp normalization with this p
 params.t_global.normalize_size = true;  % Also normalize with respect to the spatial size of the feature
 params.t_global.normalize_dim = true;   % Also normalize with respect to the dimensionality of the feature
