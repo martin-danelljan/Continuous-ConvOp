@@ -106,7 +106,13 @@ Three runfiles are included:
 
 * VOT2016_settings.m  -  Contains the parameter settings that were used in the Visual Object Tracking (VOT) 2016 challenge submission.
 
+* HOG_CN_settings.m  -  Employs only HOG and Color Names [6] features with cell sizes 6 and 4 respectively. This version is faster and does not require matconvnet.
+
 * testing.m  -  Has the same settings as in ECCV2016_settings.m by default, but can be used for playing around with parameters and features.
+
+Tracking performance on the OTB-2015 dataset is shown bellow. The comparison includes C-COT with the ECCV2016_settings.m and the HOG_CN_settings.m. Results of our previous trackers DSST [3], SRDCF [4] and DeepSRDCF [5] are also displayed.
+
+<img src="https://github.com/martin-danelljan/Continuous-ConvOp/blob/master/result_plots/OTB-2015_succsess_plot.png" alt="Could not display image" height=400 width=500>
 
 
 ####################################
@@ -121,7 +127,7 @@ Currently, four types of features are included:
 
 2. HOG features. It uses the PDollar Toolbox [2], which is included as a git submodule in external_libs/pdollar_toolbox/.
 
-3. Lookup table features. These are implemented as a lookup table that directly maps an RGB or grayscale value to a feature vector. Currently, Color Names [3] and Intensity Channels [4] are included.
+3. Lookup table features. These are implemented as a lookup table that directly maps an RGB or grayscale value to a feature vector. Currently, Color Names [6] and Intensity Channels [7] are included.
 
 4. Colorspace features. Currently grayscale and RGB are implemented.
 
@@ -136,7 +142,7 @@ See the runfile testing.m for examples of how to integrate different features. Y
 ### Integration Into OTB
 ####################################
 
-It should be easy to integrate the tracker into the Online Tracking Benchmark [5]. The runfiles supports the OTB interface, so you just have to copy and rename the runfile you want to use and then add the necessary paths (see setup_paths.m).
+It should be easy to integrate the tracker into the Online Tracking Benchmark [8]. The runfiles supports the OTB interface, so you just have to copy and rename the runfile you want to use and then add the necessary paths (see setup_paths.m).
 
 
 ####################################
@@ -170,15 +176,30 @@ Gustav Häger has contributed with some of the implementation, mainly regarding 
     Webpage: https://pdollar.github.io/toolbox/  
     GitHub repository: https://github.com/pdollar/toolbox  
 
-[3] J. van de Weijer, C. Schmid, J. J. Verbeek, and D. Larlus.  
+[3] Martin Danelljan, Gustav Häger, Fahad Shahbaz Khan and Michael Felsberg.  
+    Accurate Scale Estimation for Robust Visual Tracking.  
+    In Proceedings of the British Machine Vision Conference (BMVC), 2014.  
+    http://www.cvl.isy.liu.se/research/objrec/visualtracking/scalvistrack/index.html
+    
+[4] Martin Danelljan, Gustav Häger, Fahad Khan, Michael Felsberg.  
+    Learning Spatially Regularized Correlation Filters for Visual Tracking.  
+    In Proceedings of the International Conference in Computer Vision (ICCV), 2015.  
+    http://www.cvl.isy.liu.se/research/objrec/visualtracking/regvistrack/index.html
+
+[5] Martin Danelljan, Gustav Häger, Fahad Khan, Michael Felsberg.  
+    Convolutional Features for Correlation Filter Based Visual Tracking.  
+    ICCV workshop on the Visual Object Tracking (VOT) Challenge, 2015.  
+    http://www.cvl.isy.liu.se/research/objrec/visualtracking/regvistrack/index.html
+
+[6] J. van de Weijer, C. Schmid, J. J. Verbeek, and D. Larlus.  
     Learning color names for real-world applications.  
     TIP, 18(7):1512–1524, 2009.  
 
-[4] M. Felsberg.  
+[7] M. Felsberg.  
     Enhanced distribution field tracking using channel representations.  
     In ICCV Workshop, 2013.
 
-[5] Y. Wu, J. Lim, and M.-H. Yang.  
+[8] Y. Wu, J. Lim, and M.-H. Yang.  
     Online object tracking: A benchmark.  
     In CVPR, 2013.  
     https://sites.google.com/site/trackerbenchmark/benchmarks/v10
