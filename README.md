@@ -100,13 +100,15 @@ Lastly, perform steps 3. and 4. above.
 
 The files in the runfiles/ directory are uset to set parameters and run the tracker. You can create your own runfiles by copying an existing one and then play around with different parameters and feature combinations. 
 
-Three runfiles are included:
+These runfiles are included:
 
 * ECCV2016_settings.m  -  Contains the parameter settings that were used in the ECCV 2016 paper.
 
 * VOT2016_settings.m  -  Contains the parameter settings that were used in the Visual Object Tracking (VOT) 2016 challenge submission.
 
 * HOG_CN_settings.m  -  Employs only HOG and Color Names [6] features with cell sizes 6 and 4 respectively. This version is faster and does not require matconvnet.
+
+* HOG_settings.m  -  Employs only HOG features. Similar to SRDCF but significantly faster (13 mean FPS on OTB-2015).
 
 * testing.m  -  Has the same settings as in ECCV2016_settings.m by default, but can be used for playing around with parameters and features.
 
