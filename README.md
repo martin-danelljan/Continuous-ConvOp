@@ -112,7 +112,7 @@ These runfiles are included:
 
 * testing.m  -  Has the same settings as in ECCV2016_settings.m by default, but can be used for playing around with parameters and features.
 
-Tracking performance on the OTB-2015 dataset is shown bellow. The comparison includes C-COT with the ECCV2016_settings.m and the HOG_CN_settings.m. Results of our previous trackers DSST [3], SRDCF [4] and DeepSRDCF [5] are also displayed.
+Tracking performance on the OTB-2015 dataset is shown bellow for different runfile settings. For comparison, results of our previous trackers DSST [3], SRDCF [4] and DeepSRDCF [5] are included.
 
 <img src="https://github.com/martin-danelljan/Continuous-ConvOp/blob/master/result_plots/OTB-2015_succsess_plot.png" alt="Could not display image" height=400 width=500>
 
