@@ -13,8 +13,8 @@ Details about the tracker can be found in the ECCV 2016 paper:
 
 Martin Danelljan, Andreas Robinson, Fahad Khan, Michael Felsberg.  
 "Beyond Correlation Filters: Learning Continuous Convolution Operators for Visual Tracking."  
-In Proceedings of the European Conference on Computer Vision (ECCV), 2016.
-
+In Proceedings of the European Conference on Computer Vision (ECCV), 2016.  
+[<a href="http://www.cvl.isy.liu.se/research/objrec/visualtracking/conttrack/C-COT_ECCV16.pdf">PDF</a>] [<a href="http://www.cvl.isy.liu.se/research/objrec/visualtracking/conttrack/C-COT_ECCV16_suppl.pdf">Supplementary</a>]
 
 Please cite the above publication if you use the code or compare with our C-COT tracker in your work. Bibtex entry:
 
@@ -151,7 +151,7 @@ It should be easy to integrate the tracker into the Online Tracking Benchmark [8
 ### A Note on Results
 ####################################
 
-This code contains some minor updates and fixes compared to the code used for producing the results in our ECCV 2016 paper. Thish should however only have a marginal effect on performance on benchmarks (less than 0.5% on OTB 2015). Tracking performance can also vary slightly on different machines and Matlab versions.
+This code contains some minor updates and fixes compared to the code used for producing the results in our ECCV 2016 paper. This should however only have a marginal effect on performance (less than 0.5% on the OTB 2015 dataset). Tracking performance can also vary slightly on different machines and Matlab versions.
 
 All raw result files used in our ECCV paper can be found at the project webpage:
 http://www.cvl.isy.liu.se/research/objrec/visualtracking/conttrack/index.html
