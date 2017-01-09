@@ -4,6 +4,8 @@
 
 This MATLAB code implements Continuous Convolution Operator Tracker (C-COT).
 
+It is the top-ranked tracker in the Visual Object Tracking (VOT) challenge 2016. [9]
+
 
 #######################################################################
 ## Publication
@@ -148,6 +150,13 @@ It should be easy to integrate the tracker into the Online Tracking Benchmark [8
 
 
 ####################################
+### Integration Into VOT
+####################################
+
+To integrate the tracker into the Visual Object Tracking (VOT) challenge toolkit [9], check the VOT_integration folder. Copy the configuration file to your VOT workspace and set the path to the CCOT reposetory inside it. 
+
+
+####################################
 ### A Note on Results
 ####################################
 
@@ -205,3 +214,5 @@ Gustav Häger has contributed with some of the implementation, mainly regarding 
     Online object tracking: A benchmark.  
     In CVPR, 2013.  
     https://sites.google.com/site/trackerbenchmark/benchmarks/v10
+
+[9] http://votchallenge.net/
