@@ -85,10 +85,6 @@ setup_tracker_paths(tracker_name);
 disp([runfile_name '(seq, [], []);']);
 otb_res = eval([runfile_name '(seq, [], []);']);
 
-%convert the results to rectangle format
-otb_res = convert_to_rect(otb_res);
-
-
 num_frames = numel(images);
 
 for frame = 1:num_frames
