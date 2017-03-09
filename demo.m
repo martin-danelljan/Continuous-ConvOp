@@ -8,5 +8,5 @@ setup_paths();
 video_path = 'sequences/Crossing';
 [seq, ground_truth] = load_video_info(video_path);
 
-% Run SRDCF
+% Run C-COT
 results = testing(seq);

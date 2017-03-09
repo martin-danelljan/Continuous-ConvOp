@@ -1,17 +1,19 @@
 function results = tracker(params)
 
-%parameters according to the paper
-search_area_scale = params.search_area_scale;                         	%extra area surrounding the target
-output_sigma_factor = params.output_sigma_factor;	%spatial bandwidth (proportional to target)
-refinement_iterations = params.refinement_iterations;       %number of iterations used to refine the resulting position in a frame
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Initialization
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%parameters
+search_area_scale = params.search_area_scale;
+output_sigma_factor = params.output_sigma_factor;
+refinement_iterations = params.refinement_iterations;
 max_image_sample_size = params.max_image_sample_size;
 min_image_sample_size = params.min_image_sample_size;
 nScales = params.number_of_scales;
 scale_step = params.scale_step;
 CG_tol = params.CG_tol;
 newton_iterations = params.newton_iterations;
-
-
 features = params.t_features;
 
 % Set some default parameters
@@ -121,7 +123,7 @@ kx = circshift(-floor((output_sz(2) - 1)/2) : ceil((output_sz(2) - 1)/2), [1, -f
 ky_tp = ky';
 kx_tp = kx';
 
-% construct the Gaussian label function using parsevals formula
+% construct the Gaussian label function using Poisson summation formula
 % sig_y = sqrt(prod(floor(base_target_sz))) * output_sigma_factor * (output_sz ./ img_sample_sz);
 sig_y = sqrt(prod(floor(base_target_sz))) * output_sigma_factor * (output_sz ./ img_support_sz);
 yf_y = single(sqrt(2*pi) * sig_y(1) / output_sz(1) * exp(-2 * (pi * sig_y(1) * ky / output_sz(1)).^2));
@@ -190,8 +192,12 @@ for frame = 1:num_frames,
 
     tic();
     
-    %do not estimate translation and scaling on the first frame, since we 
-    %just want to initialize the tracker there
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %% Target localization step
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    % Do not estimate translation and scaling on the first frame, since we 
+    % just want to initialize the tracker there
     if frame > 1
         old_pos = inf(size(pos));
         iter = 1;
@@ -257,7 +263,9 @@ for frame = 1:num_frames,
 %         end
     end
     
-    % This is the training code used to update/initialize the tracker
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %% Model update step
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
     % Update the weights
     [prior_weights, replace_ind] = update_prior_weights(prior_weights, sample_weights, latest_ind, frame, params);
@@ -334,6 +342,18 @@ for frame = 1:num_frames,
     % Reconstruct the full Fourier series
     hf_full = full_fourier_coeff(hf);
     
+    % Update the target size (only used for computing output box)
+    target_sz = floor(base_target_sz * currentScaleFactor);
+    
+    %save position and calculate FPS
+    rect_position(frame,:) = [pos([2,1]) - floor(target_sz([2,1])/2), target_sz([2,1])];
+    
+    time = time + toc();
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %% Visualization
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
     % debug visualization
     if debug
         figure(20)
@@ -364,13 +384,6 @@ for frame = 1:num_frames,
         figure(99);plot(res_start_ind:length(residuals_pcg), residuals_pcg(res_start_ind:end));
         axis([res_start_ind, length(residuals_pcg), 0, min(max(residuals_pcg(res_start_ind:end)), 0.2)]);
     end
-    
-    target_sz = floor(base_target_sz * currentScaleFactor);
-    
-    %save position and calculate FPS
-    rect_position(frame,:) = [pos([2,1]) - floor(target_sz([2,1])/2), target_sz([2,1])];
-    
-    time = time + toc();
     
     %visualization
     if visualization == 1
