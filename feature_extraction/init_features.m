@@ -25,17 +25,17 @@ for n = 1:length(features)
     
     if ~isfield(features{n}.fparams,'useForColor')
         features{n}.fparams.useForColor = true;
-    end;
+    end
     
     if ~isfield(features{n}.fparams,'useForGray')
         features{n}.fparams.useForGray = true;
-    end;
+    end
     
     if (features{n}.fparams.useForColor && is_color_image) || (features{n}.fparams.useForGray && ~is_color_image)
         % keep feature
         feat_ind(n) = true;
-    end;
-end;
+    end
+end
 
 % remove features that are not used
 features = features(feat_ind);
@@ -124,10 +124,6 @@ for k = 1:length(features)
     % Find the minimum cell size of each layer
     feature_info.min_cell_size(k) = min(features{k}.fparams.cell_size);
 end
-
-% if any_cnn_feature && num_features > 1
-%     error('A CNN feature in combination with other features is not implemented yet.');
-% end
 
 % Order the features in increasing minimal cell size
 [~, feat_ind] = sort(feature_info.min_cell_size);

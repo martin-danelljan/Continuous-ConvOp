@@ -1,4 +1,4 @@
-function results=ECCV2016_settings(seq, res_path, bSaveImage, parameters)
+function results = CNN_HOG_settings(seq, res_path, bSaveImage, parameters)
 
 close all
 
