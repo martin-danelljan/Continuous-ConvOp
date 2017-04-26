@@ -108,6 +108,8 @@ These runfiles are included:
 
 * VOT2016_settings.m  -  Contains the parameter settings that were used in the Visual Object Tracking (VOT) 2016 challenge submission.
 
+* CNN_HOG_settings.m  -  Employs Deep CNN features and HOG for the best performance.
+
 * HOG_CN_settings.m  -  Employs only HOG and Color Names [6] features with cell sizes 6 and 4 respectively. This version is faster and does not require matconvnet.
 
 * HOG_settings.m  -  Employs only HOG features. Similar to SRDCF but significantly faster (13 mean FPS on OTB-2015).
