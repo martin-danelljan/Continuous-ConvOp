@@ -1,15 +1,11 @@
-#######################################################################
 # Continuous-ConvOp
-#######################################################################
 
 This MATLAB code implements Continuous Convolution Operator Tracker (C-COT).
 
 It is the top-ranked tracker in the Visual Object Tracking (VOT) challenge 2016. [9]
 
 
-#######################################################################
 ## Publication
-#######################################################################
 
 Details about the tracker can be found in the ECCV 2016 paper:
 
@@ -28,16 +24,12 @@ Please cite the above publication if you use the code or compare with our C-COT 
 }
 
 
-#######################################################################
 ## Project Webpage
-#######################################################################
 
 http://www.cvl.isy.liu.se/research/objrec/visualtracking/conttrack/index.html
 
 
-#######################################################################
 ## Contact
-#######################################################################
 
 Martin Danelljan
 
@@ -45,13 +37,9 @@ Email: martin.danelljan@liu.se
 Webpage: http://users.isy.liu.se/cvl/marda26/
 
 
-#######################################################################
 ## Installation
-#######################################################################
 
-####################################
 ### Using git clone
-####################################
 
 1. Clone the GIT repository:
 
@@ -77,9 +65,7 @@ Note:
 This package requires matconvnet [1], if you want to use deep CNN features, and PDollar Toolbox [2], if you want to use HOG features. Both these externals are included as git submodules and should be installed by following step 2. above.
 
 
-####################################
 ### Without using git
-####################################
 
 You could also downlad and install without using git. This is however not recommented since it will be harder to incorporate updates and you will not get the correct versions of matconvnet and PDollar Toolbox.
 
@@ -92,13 +78,9 @@ You could also downlad and install without using git. This is however not recomm
 Lastly, perform steps 3. and 4. above.
 
 
-#######################################################################
 ## Description and Instructions
-#######################################################################
 
-####################################
 ### Runfiles
-####################################
 
 The files in the runfiles/ directory are uset to set parameters and run the tracker. You can create your own runfiles by copying an existing one and then play around with different parameters and feature combinations. 
 
@@ -121,9 +103,7 @@ Tracking performance on the OTB-2015 dataset is shown bellow for different runfi
 <img src="https://github.com/martin-danelljan/Continuous-ConvOp/blob/master/result_plots/OTB-2015_succsess_plot.png" alt="Could not display image" height=400 width=500>
 
 
-####################################
 ### Features
-####################################
 
 This package includes a quite general framework for feature extraction. You can easily incorporate your own features in the same manner by adding a corresponding "get_featureX.m" function.
 
@@ -144,23 +124,17 @@ Each feature has its own parameter settings. You can set the cell size for each 
 See the runfile testing.m for examples of how to integrate different features. You can uncomment several features at once in the params.t_features cell array.
 
 
-####################################
 ### Integration Into OTB
-####################################
 
 It should be easy to integrate the tracker into the Online Tracking Benchmark [8]. The runfiles supports the OTB interface, so you just have to copy and rename the runfile you want to use and then add the necessary paths (see setup_paths.m).
 
 
-####################################
 ### Integration Into VOT
-####################################
 
 To integrate the tracker into the Visual Object Tracking (VOT) challenge toolkit [9], check the VOT_integration folder. Copy the configuration file to your VOT workspace and set the path to the CCOT reposetory inside it. 
 
 
-####################################
 ### A Note on Results
-####################################
 
 This code contains some minor updates and fixes compared to the code used for producing the results in our ECCV 2016 paper. This should however only have a marginal effect on performance (less than 0.5% on the OTB 2015 dataset). Tracking performance can also vary slightly on different machines and Matlab versions.
 
@@ -170,16 +144,12 @@ http://www.cvl.isy.liu.se/research/objrec/visualtracking/conttrack/index.html
 If you, for some reason, want to run the exact same version of the code as used in our ECCV 2016 paper, please send an email to martin.danelljan@liu.se.
 
 
-#######################################################################
 ## Acknowledgments
-#######################################################################
 
 Gustav Häger has contributed with some of the implementation, mainly regarding feature extraction.
 
 
-#######################################################################
 ## References
-#######################################################################
 
 [1] Webpage: http://www.vlfeat.org/matconvnet/  
     GitHub repository: https://github.com/vlfeat/matconvnet
