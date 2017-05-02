@@ -18,7 +18,6 @@ ic_params.cell_size = 4;
 cnn_params.nn_name = 'imagenet-vgg-m-2048.mat'; % Name of the network
 cnn_params.output_layer = [3 14];               % Which layers to use
 cnn_params.downsample_factor = [2 1];           % How much to downsample each output layer
-cnn_params.compressed_dim = [16 64];            % Compressed dimensionality
 cnn_params.input_size_mode = 'adaptive';        % How to choose the sample size
 cnn_params.input_size_scale = 1;                % Extra scale factor of the input samples to the network (1 is no scaling)
 
