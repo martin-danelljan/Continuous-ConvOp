@@ -1,3 +1,6 @@
+### Check out <a href="https://github.com/martin-danelljan/ECO">our more recent tracker ECO</a>, which is based on C-COT. ECO achieves a <b>20-fold speedup</b> and further performance improvements compared to C-COT.
+
+
 # Continuous-ConvOp
 
 This MATLAB code implements Continuous Convolution Operator Tracker (C-COT).
