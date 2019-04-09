@@ -1,4 +1,6 @@
-### Check out <a href="https://github.com/martin-danelljan/ECO">our more recent tracker ECO</a>, which is based on C-COT. ECO achieves a <b>20-fold speedup</b> and further performance improvements compared to C-COT.
+### Check our [pytracking](https://github.com/visionml/pytracking) repository, which includes a PyTorch-based implementation of CCOT and its extension ECO. It also includes our most recent tracker [ATOM](https://arxiv.org/pdf/1811.07628.pdf).
+
+#### For MATLAB users, check out the [repository for ECO](https://github.com/martin-danelljan/ECO), which is based on C-COT. ECO achieves a <b>20-fold speedup</b> and further performance improvements compared to C-COT.
 
 
 # Continuous-ConvOp
