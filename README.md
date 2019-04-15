@@ -14,7 +14,7 @@ It is the top-ranked tracker in the Visual Object Tracking (VOT) challenge 2016.
 
 Details about the tracker can be found in the ECCV 2016 paper:
 
-Martin Danelljan, Andreas Robinson, Fahad Khan, Michael Felsberg.  
+[Martin Danelljan](https://martin-danelljan.github.io/), Andreas Robinson, Fahad Khan, Michael Felsberg.  
 "Beyond Correlation Filters: Learning Continuous Convolution Operators for Visual Tracking."  
 In Proceedings of the European Conference on Computer Vision (ECCV), 2016.  
 [<a href="http://www.cvl.isy.liu.se/research/objrec/visualtracking/conttrack/C-COT_ECCV16.pdf">PDF</a>] [<a href="http://www.cvl.isy.liu.se/research/objrec/visualtracking/conttrack/C-COT_ECCV16_suppl.pdf">Supplementary</a>]
@@ -148,6 +148,8 @@ http://www.cvl.isy.liu.se/research/objrec/visualtracking/conttrack/index.html
 
 If you, for some reason, want to run the exact same version of the code as used in our ECCV 2016 paper, please send an email to martin.danelljan@liu.se.
 
+## Contributors
+* [Martin Danelljan](https://martin-danelljan.github.io/)  
 
 ## Acknowledgments
 
